@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="cadastro-container">
+        <form action="CadastroServlet" method="post">
+            <h2>Cadastro</h2>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="date" name="data_nascimento" required>
+            <input type="text" name="telefone" placeholder="Telefone">
+            
+            <select name="sexo" required>
+                <option value="">Selecione o Sexo</option>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+                <option value="O">Outro</option>
+            </select>
+
+            <select name="profissao" required>
+                <option value="">Selecione a Profissão</option>
+                <option value="Medico">Médico</option>
+                <option value="Professor">Professor</option>
+                <option value="Dentista">Dentista</option>
+                <option value="Engenheiro">Engenheiro</option>
+                <option value="Advogado">Advogado</option>
+            </select>
+
+            <input type="password" name="senha" placeholder="Senha" required>
+            
+            <select name="tipo_usuario" required>
+                <option value="Usuario">Usuário</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
