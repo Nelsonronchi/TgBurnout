@@ -1,1 +1,14 @@
+//Tabela Banco de dados
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    senha VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    cpf VARCHAR(11) UNIQUE NOT NULL,
+    data_nascimento DATE NOT NULL,
+    telefone VARCHAR(15),
+    sexo ENUM('M', 'F', 'O') NOT NULL,
+    profissao ENUM('Medico', 'Professor', 'Dentista', 'Engenheiro', 'Advogado') NOT NULL,
+    tipo_usuario ENUM('Usuario', 'Administrador') NOT NULL
+);
 

@@ -1,1 +1,4 @@
-
+//Criar o banco de dados
+create schema tgburnout;
+//Usar banco de dados
+use tgburnout;

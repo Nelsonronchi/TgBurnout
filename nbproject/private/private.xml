@@ -3,14 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/CadastroServlet.java</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/listarUsuarios.jsp</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/BancoDados/CriarBanco</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Controller/ListarUsuariosServlet.java</file>
             <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/style.css</file>
-            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/cadastro.html</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Controller/ExcluirUsuarioServlet.java</file>
             <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/ADMHome.html</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Controller/EditarUsuarioServlet.java</file>
             <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/index.html</file>
-            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/LoginServlet.java</file>
-            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/UsuarioHome.html</file>
-            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Conexao/DatabaseConnection.java</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/BancoDados/TabelasBanco</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/VO/Pessoa.java</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/DAO/PessoaDAO.java</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Controller/CadastrarPessoaServlet.java</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/editarUsuario.jsp</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/web/BancoDados/InserirDados</file>
+            <file>file:/C:/Users/Neto/Projetos/TgBurnout/TgBurnout/src/java/Controller/AtualizarUsuarioServlet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package Conexao;
 
 /**
@@ -15,9 +16,10 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     // A URL com o parâmetro serverTimezone para evitar problemas com fusos horários
+    //private static final String URL = "jdbc:mysql://db:3306/tgburnout?serverTimezone=UTC";
     private static final String URL = "jdbc:mysql://localhost:3306/tgburnout?serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "123";
 
     public static Connection getConnection() throws SQLException {
         // Registra o driver JDBC (necessário para versões mais antigas do Java)
@@ -31,4 +33,3 @@ public class DatabaseConnection {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }
-

@@ -1,0 +1,37 @@
+
+version: '3.8'
+services:
+  app:
+    image: tgburnout:latest
+    container_name: tgburnout_app
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=tgburnout
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD="123"
+    networks:
+      - tgburnout_net
+
+  db:
+    image: mysql:8.0
+    container_name: tgburnout_db
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=tgburnout
+      - MYSQL_ROOT_PASSWORD="123"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - tgburnout_net
+
+networks:
+  tgburnout_net:
+
+volumes:
+  db_data:
