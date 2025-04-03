@@ -12,3 +12,31 @@ CREATE TABLE usuarios (
     tipo_usuario ENUM('Usuario', 'Administrador') NOT NULL
 );
 
+// testar ALTER TABLE sua_tabela ADD COLUMN dataNascimento DATE;
+ALTER TABLE sua_tabela ADD COLUMN tipoUsuario VARCHAR(255);
+ALTER TABLE usuarios MODIFY COLUMN sexo ENUM('Masculino', 'Feminino', 'Outro');
+
+
+
+CREATE TABLE autores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT
+);
+
+
+CREATE TABLE questionarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    autor_id INT NOT NULL,
+    FOREIGN KEY (autor_id) REFERENCES autores(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE questao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    texto VARCHAR(500) NOT NULL,
+    questionario_id INT NOT NULL,
+    autor_id INT NOT NULL,
+    FOREIGN KEY (questionario_id) REFERENCES questionarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (autor_id) REFERENCES autores(id) ON DELETE CASCADE
+)ENGINE=InnoDB;
