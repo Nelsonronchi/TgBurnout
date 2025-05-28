@@ -40,4 +40,15 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+private String cpf;  // deve ter a variável de instância
+
+public void setCpf(String cpf) {
+    this.cpf = cpf;
+}
+
+public String getCpf() {
+    return cpf;
+}
+
 }

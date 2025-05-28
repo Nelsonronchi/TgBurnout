@@ -31,7 +31,8 @@
                     <td>${questao.id}</td>
                     <td>${questao.texto}</td>
                     <td>
-                        <form action="DeletarQuestaoServlet" method="POST">
+                        <form action="DeletarQuestaoServlet" method="POST"
+                            onsubmit="return confirm('Tem certeza que deseja excluir este questionário? Todas as questões serão apagadas!');">
                             <input type="hidden" name="questaoId" value="${questao.id}">
                             <input type="submit" value="Excluir">
                         </form>

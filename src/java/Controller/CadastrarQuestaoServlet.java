@@ -72,7 +72,7 @@ public class CadastrarQuestaoServlet extends HttpServlet {
                 dao.cadastrarQuestao(questao);
 
                 // Redireciona para a página de sucesso ou listagem
-                response.sendRedirect("sucesso.jsp");
+                response.sendRedirect("sucessoQuestao.jsp");
             } catch (NumberFormatException e) {
                 // Trata erro de formato de número
                 request.setAttribute("errorMessage", "Erro: ID do questionário ou autor inválido.");

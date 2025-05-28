@@ -12,47 +12,61 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LoginServlet extends HttpServlet {
-    // Método doPost para processar o login
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        // Obtém os parâmetros enviados pelo formulário de login
+
+        // Parâmetros do formulário
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
-        
+
         try (Connection conn = DatabaseConnection.getConnection()) {
             String sql = "SELECT * FROM usuarios WHERE cpf = ? AND senha = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, cpf);
             stmt.setString(2, senha);
             ResultSet rs = stmt.executeQuery();
-            
-            // Verifica se o usuário foi encontrado no banco de dados
-            if (rs.next()) {
-                String tipoUsuario = rs.getString("tipo_usuario");
-                HttpSession session = request.getSession();
-                session.setAttribute("cpf", cpf);
-                session.setAttribute("tipo_usuario", tipoUsuario);
 
-                // Redireciona o usuário para a página correta de acordo com o tipo
+            if (rs.next()) {
+                // Dados do usuário
+                int usuarioId = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String tipoUsuario = rs.getString("tipo_usuario");
+                String cpfBanco = rs.getString("cpf");
+                
+                 // Exibir no console
+    System.out.println("=== USUÁRIO LOGADO ===");
+    System.out.println("ID: " + usuarioId);
+    System.out.println("CPF: " + cpfBanco);
+    System.out.println("Senha: " + senha); // Somente para teste
+    System.out.println("======================");
+    
+                // Salva os dados na sessão
+                HttpSession session = request.getSession();
+                session.setAttribute("cpf", cpfBanco);            // CPF
+                session.setAttribute("usuarioId", usuarioId);     // ID do usuário
+                session.setAttribute("nome", nome);               // Nome (opcional)
+                session.setAttribute("tipo_usuario", tipoUsuario);// Tipo (usuário ou admin)
+
+                // Redireciona conforme o tipo de usuário
                 if ("Administrador".equals(tipoUsuario)) {
                     response.sendRedirect("ADMHome.html");
                 } else {
                     response.sendRedirect("UsuarioHome.html");
                 }
+
             } else {
-                // Caso o login falhe, redireciona para a página de login com erro
+                // Login inválido
                 response.sendRedirect("login.html?erro=1");
             }
+
         } catch (Exception e) {
             e.printStackTrace();
-            // Em caso de erro no servidor, redireciona para a página de login com erro
             response.sendRedirect("login.html?erro=2");
         }
     }
 
-    // Método para obter a descrição do servlet
     @Override
     public String getServletInfo() {
         return "Servlet de Login para autenticação de usuários";

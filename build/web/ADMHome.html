@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Página do Administrador</title>
     <link rel="stylesheet" href="style.css">
-    <title>Home Administrador</title>
 </head>
-<body>
-    <a href="cadastrarPessoa.jsp" class="botao-cadastrar">Cadastrar</a>
-    <a href="ListarUsuariosServlet"  class="botao-cadastrar" >Listar</a>
-    
-    
-    <br><h1>Bem-vindo, Administrador!</h1>
+
+<body class="Adm">
+    <!-- Cabeçalho -->
+<header class="cabecalho">
+    <table>
+        <tr>
+            <td>
+                <a href="ADMHome.html" target="centro">
+                    <img src="Imagens/logo5.png" alt="Logo MindCare" class="logo">
+                </a>
+            
+            
+                <a href="ADMHome.html" target="centro" class="titulo">
+                    MindCare: Um Software para auxiliar pesquisadores na avaliação de Burnout
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <!-- Navegação -->
+                <nav class="botoes">
+                    <a href="cadastrarPessoa.jsp" class="botao-cadastrar">Cadastrar</a>
+                    <a href="ListarUsuariosServlet" class="botao-cadastrar">Listar</a>
+                    <a href="cadastroAutor.jsp" class="botao-cadastrar">Cadastrar autor</a>
+                    <a href="CadastrarQuestionarioServlet" class="botao-cadastrar">Cadastrar Questionario</a>
+                    <a href="CadastrarQuestaoServlet" class="botao-cadastrar">Cadastrar Questão</a>
+                    <a href="cadastrarGrupo" class="botao-cadastrar">Cadastrar Grupo</a>
+                    <a href="listarGrupoQuestionario" class="botao-cadastrar">Listar e excluir Grupo</a>
+                    <a href="ListarMeusQuestionariosServlet" class="botao-cadastrar">Listar meus questionarios</a>
+                </nav>
+            </td>
+        </tr>
+    </table>
+</header>
+
+   
+
+    <!-- Conteúdo principal -->
+<main>
+    <div class="container-main">
+        <h1>Bem-vindo, Administrador!</h1>
+        <p>Aqui você pode gerenciar usuários, cadastrar dados e muito mais.</p>
+    </div>
+</main>
+
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p>&copy; 2025 MindCare - Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

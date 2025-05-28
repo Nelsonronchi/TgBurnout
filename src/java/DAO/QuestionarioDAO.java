@@ -69,4 +69,26 @@ public static void deletarPorQuestionario(int questionarioId) {
     }
 }
 
+   public Questionario buscarPorId(int id) {
+    Questionario questionario = null;
+    try (Connection conn = DatabaseConnection.getConnection()) {
+        String sql = "SELECT * FROM questionarios WHERE id = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            questionario = new Questionario();
+            questionario.setId(rs.getInt("id"));
+            questionario.setTitulo(rs.getString("titulo"));
+            // Se tiver mais campos no Questionario, inclua aqui
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return questionario;
+}
+
+
 }

@@ -8,6 +8,20 @@ import java.util.List;
 
 public class GrupoDAO {
 
+    
+       // Cadastrar um novo grupo
+    public void cadastrar(Grupo grupo) {
+        String sql = "INSERT INTO grupos (nome) VALUES (?)";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setString(1, grupo.getNome());
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Listar todos os grupos
     public List<Grupo> listarTodos() {
         List<Grupo> grupos = new ArrayList<>();
         String sql = "SELECT id, nome FROM grupos"; // Ajuste conforme sua tabela

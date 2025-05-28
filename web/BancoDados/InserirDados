@@ -5,3 +5,4 @@ VALUES ('ADM', 'admin123', 'admin@teste.com', '111', '1980-01-01', '123456789', 
 INSERT INTO usuarios (nome, senha, email, cpf, data_nascimento, telefone, sexo, profissao, tipo_usuario) 
 VALUES ('Usuario', 'user123', 'usuario@teste.com', '222', '1990-05-15', '987654321', 'F', 'Professor', 'Usuario');
 
+INSERT INTO usuarios_questionarios (usuario_id, questionario_id) VALUES (4, 2);
